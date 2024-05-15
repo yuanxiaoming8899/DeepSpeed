@@ -1,292 +1,423 @@
-[![License Apache 2.0](https://badgen.net/badge/license/apache2.0/blue)](https://github.com/Microsoft/DeepSpeed/blob/master/LICENSE)
-[![PyPI version](https://badge.fury.io/py/deepspeed.svg)](https://pypi.org/project/deepspeed/)
-[![Downloads](https://static.pepy.tech/badge/deepspeed)](https://pepy.tech/project/deepspeed)
-[![Build](https://badgen.net/badge/build/check-status/blue)](#build-pipeline-status)
-[![Twitter](https://img.shields.io/twitter/follow/MSFTDeepSpeed)](https://twitter.com/intent/follow?screen_name=MSFTDeepSpeed)
-[![Japanese Twitter](https://img.shields.io/badge/%E6%97%A5%E6%9C%AC%E8%AA%9ETwitter-%40MSFTDeepSpeedJP-blue)](https://twitter.com/MSFTDeepSpeedJP)
-[![Chinese Zhihu](https://img.shields.io/badge/%E7%9F%A5%E4%B9%8E-%E5%BE%AE%E8%BD%AFDeepSpeed-blue)](https://www.zhihu.com/people/deepspeed)
-
-
-<div align="center">
- <img src="docs/assets/images/DeepSpeed_light.svg#gh-light-mode-only" width="400px">
- <img src="docs/assets/images/DeepSpeed_dark_transparent.svg#gh-dark-mode-only" width="400px">
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><p dir="auto"><a href="https://github.com/Microsoft/DeepSpeed/blob/master/LICENSE"><img src="https://camo.githubusercontent.com/ebfafd1841074b30d0bbf188b3444cdc32288f38e475d583e2c4b1c5c8475eca/68747470733a2f2f62616467656e2e6e65742f62616467652f6c6963656e73652f617061636865322e302f626c7565" alt="许可证 Apache 2.0" data-canonical-src="https://badgen.net/badge/license/apache2.0/blue" style="max-width: 100%;"></a>
+<a href="https://pypi.org/project/deepspeed/" rel="nofollow"><img src="https://camo.githubusercontent.com/61d5fb69ca2dcc370c0a32deda634deb588c84cf66d3e550351ab73b919e5429/68747470733a2f2f62616467652e667572792e696f2f70792f6465657073706565642e737667" alt="PyPI版本" data-canonical-src="https://badge.fury.io/py/deepspeed.svg" style="max-width: 100%;"></a>
+<a href="https://pepy.tech/project/deepspeed" rel="nofollow"><img src="https://camo.githubusercontent.com/65a6227716d87570b1e024618208090d8b781a47f4b0fce479a4e173f4a804a1/68747470733a2f2f7374617469632e706570792e746563682f62616467652f646565707370656564" alt="下载" data-canonical-src="https://static.pepy.tech/badge/deepspeed" style="max-width: 100%;"></a>
+<a href="#build-pipeline-status"><img src="https://camo.githubusercontent.com/b0df963a64654c514d84e21efb732ff27da98329790f6bbb7b3161d2b23c7ea2/68747470733a2f2f62616467656e2e6e65742f62616467652f6275696c642f636865636b2d7374617475732f626c7565" alt="建造" data-canonical-src="https://badgen.net/badge/build/check-status/blue" style="max-width: 100%;"></a>
+<a href="https://twitter.com/intent/follow?screen_name=MSFTDeepSpeed" rel="nofollow"><img src="https://camo.githubusercontent.com/a38f9c0dfe46522879e155c2dab7a5d273d678dbd4f7547fef1d36d96ded2d30/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f4d534654446565705370656564" alt="推特" data-canonical-src="https://img.shields.io/twitter/follow/MSFTDeepSpeed" style="max-width: 100%;"></a>
+<a href="https://twitter.com/MSFTDeepSpeedJP" rel="nofollow"><img src="https://camo.githubusercontent.com/404b2d578e203c5ccf97694eead10cff6e72c858edcd00f3e520b8bd3d0ad3d4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f254536253937254135254536253943254143254538254141253945547769747465722d2534304d5346544465657053706565644a502d626c7565" alt="日本推特" data-canonical-src="https://img.shields.io/badge/%E6%97%A5%E6%9C%AC%E8%AA%9ETwitter-%40MSFTDeepSpeedJP-blue" style="max-width: 100%;"></a>
+<a href="https://www.zhihu.com/people/deepspeed" rel="nofollow"><img src="https://camo.githubusercontent.com/a1880d7c255a64aefb782d6d3296e15dc6bf1c60c46946212f2df049b7ea180a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2545372539462541352545342542392538452d2545352542452541452545382542442541464465657053706565642d626c7565" alt="中文知乎" data-canonical-src="https://img.shields.io/badge/%E7%9F%A5%E4%B9%8E-%E5%BE%AE%E8%BD%AFDeepSpeed-blue" style="max-width: 100%;"></a></p>
+<div align="center" dir="auto">
+ <a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/DeepSpeed_light.svg#gh-light-mode-only"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/DeepSpeed_light.svg#gh-light-mode-only" width="400px" style="max-width: 100%;"></a>
+ <a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/DeepSpeed_dark_transparent.svg#gh-dark-mode-only"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/DeepSpeed_dark_transparent.svg#gh-dark-mode-only" width="400px" style="max-width: 100%;"></a>
 </div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最新消息</font></font></h2><a id="user-content-latest-news" class="anchor" aria-label="永久链接：最新消息" href="#latest-news"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><b> <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 只需单击一下即可实现类似 ChatGPT 的模型训练，比 SOTA RLHF 系统提供 15 倍的加速，并在所有规模上实现前所未有的成本降低；</font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-chat"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">学习如何</font></font></a></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></b></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2024/03] </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fp6/03-05-2024"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-FP6：以 FP6 为中心的大型语言模型服务的力量</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[</font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fp6/03-05-2024/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">] [</font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fp6/03-05-2024/README-Chinese.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">]</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2024/01] </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen/2024-01-19"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-FastGen：引入 Mixtral、Phi-2 和 Falcon 支持，并提供主要性能和功能增强。</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2023/11]</font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/intel-inference"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">基于 DeepSpeed 第四代英特尔® 至强® 可扩展处理器的 Llama 2 推理</font></font></a> <a href="https://www.intel.com/content/www/us/en/developer/articles/technical/xllama-2-on-xeon-scalable-processor-with-deepspeed.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[英特尔版本]</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2023/11] </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-offloadpp"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed ZeRO-Offload++：通过协作 CPU/GPU 双流将训练吞吐量提高 6 倍</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2023/11] </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-FastGen：通过 MII 和 DeepSpeed-Inference 为法学硕士生成高通量文本</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[ </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">English</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ] [</font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen/chinese/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">] [</font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen/japanese/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">日本语</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">]</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2023/10] </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-visualchat/10-03-2023/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-VisualChat：通过多轮多图像输入改善您的聊天体验</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[ </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-visualchat/10-03-2023/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">English</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ] [</font></font><a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-visualchat/10-03-2023/README-Chinese.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">] [</font></font><a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-visualchat/10-03-2023/README-Japanese.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">日本语</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">]</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2023/09] 宣布 DeepSpeed4Science 计划：通过先进的人工智能系统技术实现大规模科学发现 [ </font></font><a href="https://deepspeed4science.ai/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed4Science 网站</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">] [</font></font><a href="https://www.deepspeed.ai/deepspeed4science/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">教程</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">] [</font></font><a href="https://arxiv.org/abs/2310.04610" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">白皮书</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">] [</font></font><a href="https://www.microsoft.com/en-us/research/blog/announcing-the-deepspeed4science-initiative-enabling-large-scale-scientific-discovery-through-sophisticated-ai-system-technologies/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">博客</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">] [</font></font><a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed4science/chinese/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">] [</font></font><a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed4science/japanese/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">日本语</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">]</font></font></li>
+</ul>
 
-## Latest News
-<b> <span style="color:orange" > DeepSpeed empowers ChatGPT-like model training with a single click, offering 15x speedup over SOTA RLHF systems with unprecedented cost reduction at all scales; [learn how](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-chat)</span>.</b>
-
-* [2024/03] [DeepSpeed-FP6:The power of FP6-Centric Serving for Large Language Models](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fp6/03-05-2024) [[English](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fp6/03-05-2024/README.md)] [[中文](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fp6/03-05-2024/README-Chinese.md)]
-* [2024/01] [DeepSpeed-FastGen: Introducing Mixtral, Phi-2, and Falcon support with major performance and feature enhancements.](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen/2024-01-19)
-* [2023/11] [Llama 2 Inference on 4th Gen Intel® Xeon® Scalable Processor with DeepSpeed](https://github.com/microsoft/DeepSpeed/tree/master/blogs/intel-inference) [[Intel version]](https://www.intel.com/content/www/us/en/developer/articles/technical/xllama-2-on-xeon-scalable-processor-with-deepspeed.html)
-* [2023/11] [DeepSpeed ZeRO-Offload++: 6x Higher Training Throughput via Collaborative CPU/GPU Twin-Flow](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-offloadpp)
-* [2023/11] [DeepSpeed-FastGen: High-throughput Text Generation for LLMs via MII and DeepSpeed-Inference](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen) [[English](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen)] [[中文](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen/chinese/README.md)] [[日本語](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen/japanese/README.md)]
-* [2023/10] [DeepSpeed-VisualChat: Improve Your Chat Experience with Multi-Round Multi-Image Inputs](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-visualchat/10-03-2023/README.md) [[English](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-visualchat/10-03-2023/README.md)] [[中文](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-visualchat/10-03-2023/README-Chinese.md)] [[日本語](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-visualchat/10-03-2023/README-Japanese.md)]
-* [2023/09] Announcing the DeepSpeed4Science Initiative: Enabling large-scale scientific discovery through sophisticated AI system technologies [[DeepSpeed4Science website](https://deepspeed4science.ai/)] [[Tutorials](https://www.deepspeed.ai/deepspeed4science/)] [[White paper](https://arxiv.org/abs/2310.04610)] [[Blog](https://www.microsoft.com/en-us/research/blog/announcing-the-deepspeed4science-initiative-enabling-large-scale-scientific-discovery-through-sophisticated-ai-system-technologies/)] [[中文](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed4science/chinese/README.md)] [[日本語](https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed4science/japanese/README.md)]
-
-
-<!-- NOTE: we must use html for news items otherwise links will be broken in the 'more news' section -->
 <details>
- <summary>More news</summary>
- <ul>
-  <li>[2023/08] <a href="https://github.com/microsoft/DeepSpeedExamples/blob/master/inference/huggingface/zero_inference/README.md">DeepSpeed ZeRO-Inference: 20x faster inference through weight quantization and KV cache offloading</a></li>
-
-  <li>[2023/08] <a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-chat/ds-chat-release-8-31/README.md">DeepSpeed-Chat: Llama/Llama-2 system support, efficiency boost, and training stability improvements</a></li>
-
-  <li>[2023/08] <a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-ulysses">DeepSpeed Ulysses: System Optimizations for Enabling Training of Extreme Long Sequence Transformer Models</a> [<a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-ulysses/chinese/README.md">中文</a>] [<a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-ulysses/japanese/README.md">日本語</a>]</li>
-
-  <li>[2023/06] <a href="https://www.microsoft.com/en-us/research/blog/deepspeed-zero-a-leap-in-speed-for-llm-and-chat-model-training-with-4x-less-communication/">ZeRO++: A leap in speed for LLM and chat model training with 4X less communication</a> [<a href="https://www.microsoft.com/en-us/research/blog/deepspeed-zero-a-leap-in-speed-for-llm-and-chat-model-training-with-4x-less-communication/">English</a>] [<a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/zeropp/chinese/README.md">中文</a>] [<a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/zeropp/japanese/README.md">日本語</a>]</li>
+ <summary><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">更多新闻</font></font></summary>
+ <ul dir="auto">
+  <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2023/08] </font></font><a href="https://github.com/microsoft/DeepSpeedExamples/blob/master/inference/huggingface/zero_inference/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed ZeRO-Inference：通过权重量化和 KV 缓存卸载将推理速度提高 20 倍</font></font></a></li>
+  <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2023/08] </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-chat/ds-chat-release-8-31/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-Chat：Llama/Llama-2 系统支持、效率提升和训练稳定性改进</font></font></a></li>
+  <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2023/08] </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-ulysses"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed Ulysses：支持极长序列变压器模型训练的系统优化</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[</font></font><a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-ulysses/chinese/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">] [</font></font><a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/deepspeed-ulysses/japanese/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">日本语</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">]</font></font></li>
+  <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2023/06] </font></font><a href="https://www.microsoft.com/en-us/research/blog/deepspeed-zero-a-leap-in-speed-for-llm-and-chat-model-training-with-4x-less-communication/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ZeRO++：LLM和聊天模型训练速度飞跃，沟通减少4倍</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[ </font></font><a href="https://www.microsoft.com/en-us/research/blog/deepspeed-zero-a-leap-in-speed-for-llm-and-chat-model-training-with-4x-less-communication/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">English</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ] [</font></font><a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/zeropp/chinese/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">] [</font></font><a href="https://github.com/microsoft/DeepSpeed/blob/master/blogs/zeropp/japanese/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">日本语</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">]</font></font></li>
  </ul>
 </details>
-
----
-
-# Extreme Speed and Scale for DL Training and Inference
-
-***[DeepSpeed](https://www.deepspeed.ai/) enables world's most powerful language models like [MT-530B](https://www.microsoft.com/en-us/research/blog/using-deepspeed-and-megatron-to-train-megatron-turing-nlg-530b-the-worlds-largest-and-most-powerful-generative-language-model/) and [BLOOM](https://huggingface.co/blog/bloom-megatron-deepspeed)***. It is an easy-to-use deep learning optimization software suite that powers unprecedented scale and speed for both training and inference. With DeepSpeed you can:
-
-* Train/Inference dense or sparse models with billions or trillions of parameters
-* Achieve excellent system throughput and efficiently scale to thousands of GPUs
-* Train/Inference on resource constrained GPU systems
-* Achieve unprecedented low latency and high throughput for inference
-* Achieve extreme compression for an unparalleled inference latency and model size reduction with low costs
-
----
-
-# DeepSpeed's four innovation pillars
-
-<img src="docs/assets/images/DeepSpeed-pillars.png" width="800px">
-
-
-## DeepSpeed-Training
-
-DeepSpeed offers a confluence of system innovations, that has made large scale DL training effective, and efficient, greatly improved ease of use, and redefined the DL training landscape in terms of scale that is possible. These innovations such as ZeRO, 3D-Parallelism, DeepSpeed-MoE, ZeRO-Infinity, etc. fall under the training pillar. Learn more: [DeepSpeed-Training](https://www.deepspeed.ai/training/)
-
-## DeepSpeed-Inference
-
-DeepSpeed brings together innovations in parallelism technology such as tensor, pipeline, expert and ZeRO-parallelism, and combines them with high performance custom inference kernels, communication optimizations and heterogeneous memory technologies to enable inference at an unprecedented scale, while achieving unparalleled latency, throughput and cost reduction. This systematic composition of system technologies for inference falls under the inference pillar. Learn more: [DeepSpeed-Inference](https://www.deepspeed.ai/inference)
-
-
-## DeepSpeed-Compression
-
-To further increase the inference efficiency, DeepSpeed offers easy-to-use and flexible-to-compose compression techniques for researchers and practitioners to compress their models while delivering faster speed, smaller model size, and significantly reduced compression cost. Moreover, SoTA innovations on compression like ZeroQuant and XTC are included under the compression pillar. Learn more: [DeepSpeed-Compression](https://www.deepspeed.ai/compression)
-
-## DeepSpeed4Science
-
-In line with Microsoft's mission to solve humanity's most pressing challenges, the DeepSpeed team at Microsoft is responding to this opportunity by launching a new initiative called *DeepSpeed4Science*, aiming to build unique capabilities through AI system technology innovations to help domain experts to unlock today's biggest science mysteries. Learn more: [DeepSpeed4Science website](https://deepspeed4science.ai/) and [tutorials](https://www.deepspeed.ai/deepspeed4science/)
-
----
-
-# DeepSpeed Software Suite
-
-## DeepSpeed Library
-
-   The [DeepSpeed](https://github.com/microsoft/deepspeed) library (this repository) implements and packages the innovations and technologies in DeepSpeed Training, Inference and Compression Pillars into a single easy-to-use, open-sourced repository. It allows for easy composition of multitude of features within a single training, inference or compression pipeline. The DeepSpeed Library is heavily adopted by the DL community, and has been used to enable some of the most powerful models (see [DeepSpeed Adoption](#deepspeed-adoption)).
-
-## Model Implementations for Inference (MII)
-
-   [Model Implementations for Inference (MII)](https://github.com/microsoft/deepspeed-mii) is an open-sourced repository for making low-latency and high-throughput inference accessible to all data scientists by alleviating the need to apply complex system optimization techniques themselves. Out-of-box, MII offers support for thousands of widely used DL models, optimized using DeepSpeed-Inference, that can be deployed with a few lines of code, while achieving significant latency reduction compared to their vanilla open-sourced versions.
-
-## DeepSpeed on Azure
-
-   DeepSpeed users are diverse and have access to different environments. We recommend to try DeepSpeed on Azure as it is the simplest and easiest method. The recommended method to try DeepSpeed on Azure is through AzureML [recipes](https://github.com/Azure/azureml-examples/tree/main/v1/python-sdk/workflows/train/deepspeed). The job submission and data preparation scripts have been made available [here](https://github.com/microsoft/Megatron-DeepSpeed/tree/main/examples_deepspeed/azureml). For more details on how to use DeepSpeed on Azure, please follow the [Azure tutorial](https://www.deepspeed.ai/tutorials/azure/).
-
----
-
-# DeepSpeed Adoption
-
-DeepSpeed is an important part of Microsoft’s new
-[AI at Scale](https://www.microsoft.com/en-us/research/project/ai-at-scale/)
-initiative to enable next-generation AI capabilities at scale, where you can find more
-information [here](https://innovation.microsoft.com/en-us/exploring-ai-at-scale).
-
-DeepSpeed has been used to train many different large-scale models, below is a list of several examples that we are aware of (if you'd like to include your model please submit a PR):
-
-  * [Megatron-Turing NLG (530B)](https://www.microsoft.com/en-us/research/blog/using-deepspeed-and-megatron-to-train-megatron-turing-nlg-530b-the-worlds-largest-and-most-powerful-generative-language-model/)
-  * [Jurassic-1 (178B)](https://uploads-ssl.webflow.com/60fd4503684b466578c0d307/61138924626a6981ee09caf6_jurassic_tech_paper.pdf)
-  * [BLOOM (176B)](https://huggingface.co/blog/bloom-megatron-deepspeed)
-  * [GLM (130B)](https://github.com/THUDM/GLM-130B)
-  * [xTrimoPGLM (100B)](https://www.biorxiv.org/content/10.1101/2023.07.05.547496v2)
-  * [YaLM (100B)](https://github.com/yandex/YaLM-100B)
-  * [GPT-NeoX (20B)](https://github.com/EleutherAI/gpt-neox)
-  * [AlexaTM (20B)](https://www.amazon.science/blog/20b-parameter-alexa-model-sets-new-marks-in-few-shot-learning)
-  * [Turing NLG (17B)](https://www.microsoft.com/en-us/research/blog/turing-nlg-a-17-billion-parameter-language-model-by-microsoft/)
-  * [METRO-LM (5.4B)](https://arxiv.org/pdf/2204.06644.pdf)
-
-DeepSpeed has been integrated with several different popular open-source DL frameworks such as:
-
-|                                                                                                | Documentation                                |
-| ---------------------------------------------------------------------------------------------- | -------------------------------------------- |
-<img src="docs/assets/images/transformers-light.png#gh-light-mode-only" width="250px"><img src="docs/assets/images/transformers-dark.png#gh-dark-mode-only" width="250px"> | [Transformers with DeepSpeed](https://huggingface.co/docs/transformers/main/main_classes/deepspeed) |
-| <img src="docs/assets/images/accelerate-light.png#gh-light-mode-only" width="250px"><img src="docs/assets/images/accelerate-dark.png#gh-dark-mode-only" width="250px"> | [Accelerate with DeepSpeed](https://huggingface.co/docs/accelerate/usage_guides/deepspeed) |
-| <img src="docs/assets/images/lightning-light.svg#gh-light-mode-only" width="200px"><img src="docs/assets/images/lightning-dark.svg#gh-dark-mode-only" width="200px"> | [Lightning with DeepSpeed](https://lightning.ai/docs/pytorch/stable/advanced/model_parallel.html#deepspeed) |
-| <img src="docs/assets/images/mosaicml.svg" width="200px"> | [MosaicML with DeepSpeed](https://docs.mosaicml.com/projects/composer/en/latest/trainer/using_the_trainer.html?highlight=deepspeed#deepspeed-integration) |
-| <img src="docs/assets/images/determined.svg" width="225px"> | [Determined with DeepSpeed](https://docs.determined.ai/latest/training/apis-howto/deepspeed/overview.html) |
-| <img src="https://user-images.githubusercontent.com/58739961/187154444-fce76639-ac8d-429b-9354-c6fac64b7ef8.jpg" width=150> | [MMEngine with DeepSpeed](https://mmengine.readthedocs.io/en/latest/common_usage/large_model_training.html#deepspeed) |
-
----
-
-# Build Pipeline Status
-
-| Description | Status |
-| ----------- | ------ |
-| NVIDIA | [![nv-torch110-p40](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch110-p40.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch110-p40.yml) [![nv-torch110-v100](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch110-v100.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch110-v100.yml) [![nv-torch-latest-v100](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch-latest-v100.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch-latest-v100.yml) [![nv-h100](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-h100.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-h100.yml) [![nv-inference](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-inference.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-inference.yml) [![nv-nightly](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-nightly.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-nightly.yml) |
-| AMD | [![amd-mi200](https://github.com/microsoft/DeepSpeed/actions/workflows/amd-mi200.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/amd-mi200.yml) |
-| CPU | [![torch-latest-cpu](https://github.com/microsoft/DeepSpeed/actions/workflows/cpu-torch-latest.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/cpu-torch-latest.yml) [![cpu-inference](https://github.com/microsoft/DeepSpeed/actions/workflows/cpu-inference.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/cpu-inference.yml) |
-| Intel Gaudi | [![hpu-gaudi2](https://github.com/microsoft/DeepSpeed/actions/workflows/hpu-gaudi2.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/hpu-gaudi2.yml) |
-| Intel XPU | [![xpu-max1100](https://github.com/microsoft/DeepSpeed/actions/workflows/xpu-max1100.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/xpu-max1100.yml) |
-| PyTorch Nightly | [![nv-torch-nightly-v100](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch-nightly-v100.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch-nightly-v100.yml) |
-| Integrations | [![nv-transformers-v100](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-transformers-v100.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-transformers-v100.yml) [![nv-lightning-v100](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-lightning-v100.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-lightning-v100.yml) [![nv-accelerate-v100](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-accelerate-v100.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-accelerate-v100.yml) [![nv-mii](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-mii.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-mii.yml) [![nv-ds-chat](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-ds-chat.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-ds-chat.yml) [![nv-sd](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-sd.yml/badge.svg)](https://github.com/microsoft/DeepSpeed/actions/workflows/nv-sd.yml) |
-| Misc | [![Formatting](https://github.com/microsoft/DeepSpeed/actions/workflows/formatting.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/formatting.yml) [![pages-build-deployment](https://github.com/microsoft/DeepSpeed/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/microsoft/DeepSpeed/actions/workflows/pages/pages-build-deployment) [![Documentation Status](https://readthedocs.org/projects/deepspeed/badge/?version=latest)](https://deepspeed.readthedocs.io/en/latest/?badge=latest)[![python](https://github.com/microsoft/DeepSpeed/actions/workflows/python.yml/badge.svg?branch=master)](https://github.com/microsoft/DeepSpeed/actions/workflows/python.yml) |
-
-# Installation
-
-The quickest way to get started with DeepSpeed is via pip, this will install
-the latest release of DeepSpeed which is not tied to specific PyTorch or CUDA
-versions. DeepSpeed includes several C++/CUDA extensions that we commonly refer
-to as our 'ops'.  By default, all of these extensions/ops will be built
-just-in-time (JIT) using [torch's JIT C++ extension loader that relies on
-ninja](https://pytorch.org/docs/stable/cpp_extension.html) to build and
-dynamically link them at runtime.
-
-## Requirements
-* [PyTorch](https://pytorch.org/) must be installed _before_ installing DeepSpeed.
-* For full feature support we recommend a version of PyTorch that is >= 1.9 and ideally the latest PyTorch stable release.
-* A CUDA or ROCm compiler such as [nvcc](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#introduction) or [hipcc](https://github.com/ROCm-Developer-Tools/HIPCC) used to compile C++/CUDA/HIP extensions.
-* Specific GPUs we develop and test against are listed below, this doesn't mean your GPU will not work if it doesn't fall into this category it's just DeepSpeed is most well tested on the following:
-  * NVIDIA: Pascal, Volta, Ampere, and Hopper architectures
-  * AMD: MI100 and MI200
-
-## Contributed HW support
-* DeepSpeed now support various HW accelerators.
-
-| Contributor | Hardware                            | Accelerator Name | Contributor validated | Upstream validated |
-|-------------|-------------------------------------|------------------| --------------------- |--------------------|
-| Huawei      | Huawei Ascend NPU                   | npu              | Yes | No                 |
-| Intel       | Intel(R) Gaudi(R) 2 AI accelerator  | hpu              | Yes | Yes                |
-| Intel       | Intel(R) Xeon(R) Processors         | cpu              | Yes | Yes                |
-| Intel       | Intel(R) Data Center GPU Max series | xpu              | Yes | Yes                |
-
-## PyPI
-We regularly push releases to [PyPI](https://pypi.org/project/deepspeed/) and encourage users to install from there in most cases.
-
-```bash
-pip install deepspeed
-```
-
-After installation, you can validate your install and see which extensions/ops
-your machine is compatible with via the DeepSpeed environment report.
-
-```bash
-ds_report
-```
-
-If you would like to pre-install any of the DeepSpeed extensions/ops (instead
-of JIT compiling) or install pre-compiled ops via PyPI please see our [advanced
-installation instructions](https://www.deepspeed.ai/tutorials/advanced-install/).
-
-## Windows
-Windows support is partially supported with DeepSpeed. On Windows you can build wheel with following steps, currently only inference mode is supported.
-1. Install pytorch, such as pytorch 1.8 + cuda 11.1
-2. Install visual cpp build tools, such as VS2019 C++ x64/x86 build tools
-3. Launch cmd console with Administrator privilege for creating required symlink folders
-4. Run `python setup.py bdist_wheel` to build wheel in `dist` folder
-
-# Features
-
-Please checkout [DeepSpeed-Training](https://www.deepspeed.ai/training), [DeepSpeed-Inference](https://www.deepspeed.ai/inference) and [DeepSpeed-Compression](https://www.deepspeed.ai/compression) pages for full set of features offered along each of these three pillars.
-
-# Further Reading
-
-All DeepSpeed documentation, tutorials, and blogs can be found on our website: [deepspeed.ai](https://www.deepspeed.ai/)
-
-
-|                                                                                                | Description                                  |
-| ---------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| [Getting Started](https://www.deepspeed.ai/getting-started/)                                   |  First steps with DeepSpeed                  |
-| [DeepSpeed JSON Configuration](https://www.deepspeed.ai/docs/config-json/)                     |  Configuring DeepSpeed                       |
-| [API Documentation](https://deepspeed.readthedocs.io/en/latest/)                               |  Generated DeepSpeed API documentation       |
-| [Tutorials](https://www.deepspeed.ai/tutorials/)                                               |  Tutorials                                   |
-| [Blogs](https://www.deepspeed.ai/posts/)                                                       |  Blogs                                   |
-
-
-# Contributing
-DeepSpeed welcomes your contributions! Please see our
-[contributing](CONTRIBUTING.md) guide for more details on formatting, testing,
-etc.<br/>
-Thanks so much to all of our amazing contributors!
-
+<hr>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">深度学习训练和推理的极速和规模</font></font></h1><a id="user-content-extreme-speed-and-scale-for-dl-training-and-inference" class="anchor" aria-label="永久链接：深度学习训练和推理的极速和规模" href="#extreme-speed-and-scale-for-dl-training-and-inference"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><em><strong><a href="https://www.deepspeed.ai/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持世界上最强大的语言模型，例如</font></font><a href="https://www.microsoft.com/en-us/research/blog/using-deepspeed-and-megatron-to-train-megatron-turing-nlg-530b-the-worlds-largest-and-most-powerful-generative-language-model/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MT-530B</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://huggingface.co/blog/bloom-megatron-deepspeed" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BLOOM</font></font></a></strong></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。它是一款易于使用的深度学习优化软件套件，可为训练和推理提供前所未有的规模和速度。借助 DeepSpeed，您可以：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">训练/推理具有数十亿或数万亿参数的密集或稀疏模型</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">实现出色的系统吞吐量并有效扩展到数千个 GPU</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在资源受限的 GPU 系统上进行训练/推理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">实现前所未有的低延迟和高吞吐量的推理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以低成本实现极限压缩，实现无与伦比的推理延迟和模型尺寸减小</font></font></li>
+</ul>
+<hr>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 的四大创新支柱</font></font></h1><a id="user-content-deepspeeds-four-innovation-pillars" class="anchor" aria-label="永久链接：DeepSpeed 的四大创新支柱" href="#deepspeeds-four-innovation-pillars"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/DeepSpeed-pillars.png"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/DeepSpeed-pillars.png" width="800px" style="max-width: 100%;"></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">深度速度训练</font></font></h2><a id="user-content-deepspeed-training" class="anchor" aria-label="永久链接：DeepSpeed 训练" href="#deepspeed-training"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 提供了系统创新的融合，使大规模深度学习训练变得有效、高效，大大提高了易用性，并在可能的规模方面重新定义了深度学习训练格局。 ZeRO、3D-Parallelism、DeepSpeed-MoE、ZeRO-Infinity 等创新属于培训支柱。了解更多：</font></font><a href="https://www.deepspeed.ai/training/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 训练</font></font></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 推理</font></font></h2><a id="user-content-deepspeed-inference" class="anchor" aria-label="永久链接：DeepSpeed-推理" href="#deepspeed-inference"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 汇集了张量、管道、专家和零并行等并行技术的创新，并将它们与高性能定制推理内核、通信优化和异构内存技术相结合，以前所未有的规模实现推理，同时实现无与伦比的延迟、吞吐量和性能。降低成本。这种推理系统技术的系统组合属于推理支柱。了解更多：</font></font><a href="https://www.deepspeed.ai/inference" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-推理</font></font></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 压缩</font></font></h2><a id="user-content-deepspeed-compression" class="anchor" aria-label="永久链接：DeepSpeed 压缩" href="#deepspeed-compression"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为了进一步提高推理效率，DeepSpeed 为研究人员和从业人员提供易于使用且组合灵活的压缩技术来压缩他们的模型，同时提供更快的速度、更小的模型大小并显着降低的压缩成本。此外，ZeroQuant 和 XTC 等 SoTA 在压缩方面的创新也包含在压缩支柱下。了解更多：</font></font><a href="https://www.deepspeed.ai/compression" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 压缩</font></font></a></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">深速4科学</font></font></h2><a id="user-content-deepspeed4science" class="anchor" aria-label="永久链接：DeepSpeed4Science" href="#deepspeed4science"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">秉承微软解决人类最紧迫挑战的使命，微软 DeepSpeed 团队响应这一机遇，推出了一项名为</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed4Science</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的新计划，旨在通过人工智能系统技术创新构建独特的能力，帮助领域专家解开当今最大的科学谜团。 。了解更多信息：</font></font><a href="https://deepspeed4science.ai/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed4Science 网站</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://www.deepspeed.ai/deepspeed4science/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">教程</font></font></a></p>
+<hr>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 软件套件</font></font></h1><a id="user-content-deepspeed-software-suite" class="anchor" aria-label="永久链接：DeepSpeed 软件套件" href="#deepspeed-software-suite"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 库</font></font></h2><a id="user-content-deepspeed-library" class="anchor" aria-label="永久链接：DeepSpeed 库" href="#deepspeed-library"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed</font><font style="vertical-align: inherit;">库（此存储库）实现并将 DeepSpeed 训练、推理和压缩支柱中的创新和技术打包到一个易于使用的开源存储库中</font></font><a href="https://github.com/microsoft/deepspeed"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">它允许在单个训练、推理或压缩管道中轻松组合多个特征。 DeepSpeed 库被 DL 社区广泛采用，并已用于启用一些最强大的模型（请参阅</font></font><a href="#deepspeed-adoption"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 采用</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">推理模型实现 (MII)</font></font></h2><a id="user-content-model-implementations-for-inference-mii" class="anchor" aria-label="永久链接：推理模型实现 (MII)" href="#model-implementations-for-inference-mii"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><a href="https://github.com/microsoft/deepspeed-mii"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">推理模型实现 (MII)</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是一个开源存储库，通过减轻应用复杂系统优化技术本身的需要，使所有数据科学家都可以进行低延迟和高吞吐量的推理。 MII 开箱即用，支持数千种广泛使用的深度学习模型，并使用 DeepSpeed-Inference 进行优化，只需几行代码即可部署，同时与普通开源版本相比，延迟显着降低。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Azure 上的 DeepSpeed</font></font></h2><a id="user-content-deepspeed-on-azure" class="anchor" aria-label="永久链接：Azure 上的 DeepSpeed" href="#deepspeed-on-azure"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 用户多种多样，可以访问不同的环境。我们建议尝试 Azure 上的 DeepSpeed，因为这是最简单、最容易的方法。在 Azure 上尝试 DeepSpeed 的推荐方法是通过 AzureML</font></font><a href="https://github.com/Azure/azureml-examples/tree/main/v1/python-sdk/workflows/train/deepspeed"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">配方</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。作业提交和数据准备脚本已</font></font><a href="https://github.com/microsoft/Megatron-DeepSpeed/tree/main/examples_deepspeed/azureml"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在此处</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提供。有关如何在 Azure 上使用 DeepSpeed 的更多详细信息，请遵循</font></font><a href="https://www.deepspeed.ai/tutorials/azure/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Azure 教程</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<hr>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 采用</font></font></h1><a id="user-content-deepspeed-adoption" class="anchor" aria-label="永久链接：DeepSpeed 采用" href="#deepspeed-adoption"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 是 Microsoft 新的
+</font></font><a href="https://www.microsoft.com/en-us/research/project/ai-at-scale/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">大规模 AI</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+计划的重要组成部分，该计划旨在大规模实现下一代 AI 功能，您可以</font></font><a href="https://innovation.microsoft.com/en-us/exploring-ai-at-scale" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在此处</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">找到更多信息。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 已被用于训练许多不同的大型模型，下面列出了我们所知道的几个示例（如果您想包含您的模型，请提交 PR）：</font></font></p>
+<ul dir="auto">
+<li><a href="https://www.microsoft.com/en-us/research/blog/using-deepspeed-and-megatron-to-train-megatron-turing-nlg-530b-the-worlds-largest-and-most-powerful-generative-language-model/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">威震天-图灵 NLG (530B)</font></font></a></li>
+<li><a href="https://uploads-ssl.webflow.com/60fd4503684b466578c0d307/61138924626a6981ee09caf6_jurassic_tech_paper.pdf" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">侏罗纪-1 (178B)</font></font></a></li>
+<li><a href="https://huggingface.co/blog/bloom-megatron-deepspeed" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">绽放 (176B)</font></font></a></li>
+<li><a href="https://github.com/THUDM/GLM-130B"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GLM (130B)</font></font></a></li>
+<li><a href="https://www.biorxiv.org/content/10.1101/2023.07.05.547496v2" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">xTrimoPGLM (100B)</font></font></a></li>
+<li><a href="https://github.com/yandex/YaLM-100B"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">亚LM (100B)</font></font></a></li>
+<li><a href="https://github.com/EleutherAI/gpt-neox"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GPT-NeoX (20B)</font></font></a></li>
+<li><a href="https://www.amazon.science/blog/20b-parameter-alexa-model-sets-new-marks-in-few-shot-learning" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AlexaTM (20B)</font></font></a></li>
+<li><a href="https://www.microsoft.com/en-us/research/blog/turing-nlg-a-17-billion-parameter-language-model-by-microsoft/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图灵 NLG (17B)</font></font></a></li>
+<li><a href="https://arxiv.org/pdf/2204.06644.pdf" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">地铁LM (5.4B)</font></font></a></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 已与多种不同的流行开源深度学习框架集成，例如：</font></font></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/transformers-light.png#gh-light-mode-only"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/transformers-light.png#gh-light-mode-only" width="250px" style="max-width: 100%;"></a><a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/transformers-dark.png#gh-dark-mode-only"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/transformers-dark.png#gh-dark-mode-only" width="250px" style="max-width: 100%;"></a></td>
+<td><a href="https://huggingface.co/docs/transformers/main/main_classes/deepspeed" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 变形金刚</font></font></a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/accelerate-light.png#gh-light-mode-only"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/accelerate-light.png#gh-light-mode-only" width="250px" style="max-width: 100%;"></a><a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/accelerate-dark.png#gh-dark-mode-only"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/accelerate-dark.png#gh-dark-mode-only" width="250px" style="max-width: 100%;"></a></td>
+<td><a href="https://huggingface.co/docs/accelerate/usage_guides/deepspeed" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 DeepSpeed 加速</font></font></a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/lightning-light.svg#gh-light-mode-only"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/lightning-light.svg#gh-light-mode-only" width="200px" style="max-width: 100%;"></a><a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/lightning-dark.svg#gh-dark-mode-only"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/lightning-dark.svg#gh-dark-mode-only" width="200px" style="max-width: 100%;"></a></td>
+<td><a href="https://lightning.ai/docs/pytorch/stable/advanced/model_parallel.html#deepspeed" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">闪电与 DeepSpeed</font></font></a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/mosaicml.svg"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/mosaicml.svg" width="200px" style="max-width: 100%;"></a></td>
+<td><a href="https://docs.mosaicml.com/projects/composer/en/latest/trainer/using_the_trainer.html?highlight=deepspeed#deepspeed-integration" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MosaicML 与 DeepSpeed</font></font></a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed/blob/master/docs/assets/images/determined.svg"><img src="/microsoft/DeepSpeed/raw/master/docs/assets/images/determined.svg" width="225px" style="max-width: 100%;"></a></td>
+<td><a href="https://docs.determined.ai/latest/training/apis-howto/deepspeed/overview.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过 DeepSpeed 确定</font></font></a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/58739961/187154444-fce76639-ac8d-429b-9354-c6fac64b7ef8.jpg"><img src="https://user-images.githubusercontent.com/58739961/187154444-fce76639-ac8d-429b-9354-c6fac64b7ef8.jpg" width="150" style="max-width: 100%;"></a></td>
+<td><a href="https://mmengine.readthedocs.io/en/latest/common_usage/large_model_training.html#deepspeed" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MMEngine 与 DeepSpeed</font></font></a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建管道状态</font></font></h1><a id="user-content-build-pipeline-status" class="anchor" aria-label="永久链接：构建管道状态" href="#build-pipeline-status"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<table>
+<thead>
+<tr>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">描述</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">地位</font></font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英伟达</font></font></td>
+<td><a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch110-p40.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch110-p40.yml/badge.svg?branch=master" alt="nv-火炬110-p40" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch110-v100.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch110-v100.yml/badge.svg?branch=master" alt="nv-火炬110-v100" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch-latest-v100.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch-latest-v100.yml/badge.svg?branch=master" alt="nv-火炬-最新-v100" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-h100.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-h100.yml/badge.svg?branch=master" alt="NV-H100" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-inference.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-inference.yml/badge.svg?branch=master" alt="nv-推理" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-nightly.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-nightly.yml/badge.svg?branch=master" alt="nv-每晚" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AMD</font></font></td>
+<td><a href="https://github.com/microsoft/DeepSpeed/actions/workflows/amd-mi200.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/amd-mi200.yml/badge.svg?branch=master" alt="AMD-mi200" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中央处理器</font></font></td>
+<td><a href="https://github.com/microsoft/DeepSpeed/actions/workflows/cpu-torch-latest.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/cpu-torch-latest.yml/badge.svg?branch=master" alt="火炬最新CPU" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/cpu-inference.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/cpu-inference.yml/badge.svg?branch=master" alt="CPU推理" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英特尔高迪</font></font></td>
+<td><a href="https://github.com/microsoft/DeepSpeed/actions/workflows/hpu-gaudi2.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/hpu-gaudi2.yml/badge.svg?branch=master" alt="hpu高迪2" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英特尔XPU</font></font></td>
+<td><a href="https://github.com/microsoft/DeepSpeed/actions/workflows/xpu-max1100.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/xpu-max1100.yml/badge.svg?branch=master" alt="xpu-max1100" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PyTorch 每晚</font></font></td>
+<td><a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch-nightly-v100.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-torch-nightly-v100.yml/badge.svg?branch=master" alt="nv-火炬-每晚-v100" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">集成</font></font></td>
+<td><a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-transformers-v100.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-transformers-v100.yml/badge.svg?branch=master" alt="nv-变形金刚-v100" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-lightning-v100.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-lightning-v100.yml/badge.svg?branch=master" alt="nv-闪电-v100" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-accelerate-v100.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-accelerate-v100.yml/badge.svg?branch=master" alt="nv-加速-v100" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-mii.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-mii.yml/badge.svg?branch=master" alt="NV-MII" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-ds-chat.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-ds-chat.yml/badge.svg?branch=master" alt="nv-ds-聊天" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-sd.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/nv-sd.yml/badge.svg" alt="NV-SD" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">杂项</font></font></td>
+<td><a href="https://github.com/microsoft/DeepSpeed/actions/workflows/formatting.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/formatting.yml/badge.svg?branch=master" alt="格式化" style="max-width: 100%;"></a> <a href="https://github.com/microsoft/DeepSpeed/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/pages/pages-build-deployment/badge.svg" alt="页面构建部署" style="max-width: 100%;"></a> <a href="https://deepspeed.readthedocs.io/en/latest/?badge=latest" rel="nofollow"><img src="https://camo.githubusercontent.com/f7cc04d1ce2c5f84caf0be13a71e042b2324e303e1dc3fc6755a212d2c32387c/68747470733a2f2f72656164746865646f63732e6f72672f70726f6a656374732f6465657073706565642f62616467652f3f76657273696f6e3d6c6174657374" alt="文件状态" data-canonical-src="https://readthedocs.org/projects/deepspeed/badge/?version=latest" style="max-width: 100%;"></a><a href="https://github.com/microsoft/DeepSpeed/actions/workflows/python.yml"><img src="https://github.com/microsoft/DeepSpeed/actions/workflows/python.yml/badge.svg?branch=master" alt="Python" style="max-width: 100%;"></a></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></h1><a id="user-content-installation" class="anchor" aria-label="永久链接：安装" href="#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开始使用 DeepSpeed 的最快方法是通过 pip，这将安装最新版本的 DeepSpeed，该版本不依赖于特定的 PyTorch 或 CUDA 版本。 DeepSpeed 包含多个 C++/CUDA 扩展，我们通常将其称为“操作”。默认情况下，所有这些扩展/操作都将使用 torch 的 JIT C++ 扩展加载器即时构建（JIT），</font></font><a href="https://pytorch.org/docs/stable/cpp_extension.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该加载器依赖 ninja</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在运行时构建和动态链接它们。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要求</font></font></h2><a id="user-content-requirements" class="anchor" aria-label="永久链接：要求" href="#requirements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><a href="https://pytorch.org/" rel="nofollow"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在安装 DeepSpeed</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">之前</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必须安装</font><a href="https://pytorch.org/" rel="nofollow"><font style="vertical-align: inherit;">PyTorch 。</font></a></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为了获得完整的功能支持，我们建议使用 &gt;= 1.9 的 PyTorch 版本，最好是最新的 PyTorch 稳定版本。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CUDA 或 ROCm 编译器，例如</font></font><a href="https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#introduction" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">nvcc</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或</font></font><a href="https://github.com/ROCm-Developer-Tools/HIPCC"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">hipcc，</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用于编译 C++/CUDA/HIP 扩展。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下面列出了我们开发和测试的特定 GPU，这并不意味着您的 GPU 如果不属于此类别就无法工作，只是 DeepSpeed 在以下方面进行了最充分的测试：
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NVIDIA：Pascal、Volta、Ampere 和 Hopper 架构</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AMD：MI100 和 MI200</font></font></li>
+</ul>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献的硬件支持</font></font></h2><a id="user-content-contributed-hw-support" class="anchor" aria-label="永久链接：贡献的硬件支持" href="#contributed-hw-support"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 现在支持各种硬件加速器。</font></font></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献者</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">硬件</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加速器名称</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献者已验证</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上游验证</font></font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">华为</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">华为升腾NPU</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">西北大学</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是的</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">不</font></font></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英特尔</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英特尔(R) Gaudi(R) 2 人工智能加速器</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">高压泵</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是的</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是的</font></font></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英特尔</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英特尔(R) 至强(R) 处理器</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中央处理器</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是的</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是的</font></font></td>
+</tr>
+<tr>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英特尔</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英特尔(R) 数据中心 GPU Max 系列</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">xpu</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是的</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是的</font></font></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">皮伊</font></font></h2><a id="user-content-pypi" class="anchor" aria-label="永久链接：PyPI" href="#pypi"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们定期将版本推送到</font></font><a href="https://pypi.org/project/deepspeed/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PyPI</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，并鼓励用户在大多数情况下从那里安装。</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>pip install deepspeed</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install deepspeed" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装后，您可以验证安装并通过 DeepSpeed 环境报告查看您的计算机与哪些扩展/操作兼容。</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>ds_report</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="ds_report" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您想预安装任何 DeepSpeed 扩展/操作（而不是 JIT 编译）或通过 PyPI 安装预编译操作，请参阅我们的</font></font><a href="https://www.deepspeed.ai/tutorials/advanced-install/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">高级安装说明</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视窗</font></font></h2><a id="user-content-windows" class="anchor" aria-label="永久链接：Windows" href="#windows"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 部分支持 Windows 支持。在 Windows 上，您可以通过以下步骤构建轮子，目前仅支持推理模式。</font></font></p>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装pytorch，如pytorch 1.8 + cuda 11.1</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装Visual cpp构建工具，例如VS2019 C++ x64/x86构建工具</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用管理员权限启动 cmd 控制台以创建所需的符号链接文件夹</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行以在</font><font style="vertical-align: inherit;">文件夹</font></font><code>python setup.py bdist_wheel</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中构建轮子</font></font><code>dist</code><font style="vertical-align: inherit;"></font></li>
+</ol>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特征</font></font></h1><a id="user-content-features" class="anchor" aria-label="永久链接：特点" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请查看</font></font><a href="https://www.deepspeed.ai/training" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-Training</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://www.deepspeed.ai/inference" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-Inference</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://www.deepspeed.ai/compression" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed- Compression</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">页面，了解这三个支柱提供的全套功能。</font></font></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">进一步阅读</font></font></h1><a id="user-content-further-reading" class="anchor" aria-label="永久链接：进一步阅读" href="#further-reading"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">所有 DeepSpeed 文档、教程和博客都可以在我们的网站上找到：</font></font><a href="https://www.deepspeed.ai/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">deepspeed.ai</font></font></a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">描述</font></font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.deepspeed.ai/getting-started/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">入门</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 DeepSpeed 的第一步</font></font></td>
+</tr>
+<tr>
+<td><a href="https://www.deepspeed.ai/docs/config-json/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed JSON 配置</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">配置 DeepSpeed</font></font></td>
+</tr>
+<tr>
+<td><a href="https://deepspeed.readthedocs.io/en/latest/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">API文档</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">生成的 DeepSpeed API 文档</font></font></td>
+</tr>
+<tr>
+<td><a href="https://www.deepspeed.ai/tutorials/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">教程</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">教程</font></font></td>
+</tr>
+<tr>
+<td><a href="https://www.deepspeed.ai/posts/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">博客</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">博客</font></font></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h1><a id="user-content-contributing" class="anchor" aria-label="永久链接：贡献" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 欢迎您的贡献！请参阅我们的
+</font></font><a href="/microsoft/DeepSpeed/blob/master/CONTRIBUTING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">指南，了解有关格式、测试等的更多详细信息。</font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+非常感谢我们所有出色的贡献者！</font></font></p>
 <a href="https://github.com/microsoft/DeepSpeed/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=microsoft/DeepSpeed&r="  width="800px"/>
+  <img src="https://camo.githubusercontent.com/ad3e06680f2036d4b136c34ec96678911f516a64b74f3a7ca2440db0f81dfcda/68747470733a2f2f636f6e747269622e726f636b732f696d6167653f7265706f3d6d6963726f736f66742f44656570537065656426723d" width="800px" data-canonical-src="https://contrib.rocks/image?repo=microsoft/DeepSpeed&amp;r=" style="max-width: 100%;">
 </a>
-
-## Contributor License Agreement
-This project welcomes contributions and suggestions. Most contributions require you to
-agree to a Contributor License Agreement (CLA) declaring that you have the right to, and
-actually do, grant us the rights to use your contribution. For details, visit
-https://cla.opensource.microsoft.com.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need
-to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply
-follow the instructions provided by the bot. You will only need to do this once across
-all repos using our CLA.
-
-## Code of Conduct
-This project has adopted the [Microsoft Open Source Code of
-Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the
-[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact
-[opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-# Publications
-1. Samyam Rajbhandari, Jeff Rasley, Olatunji Ruwase, Yuxiong He. (2019) ZeRO: memory optimizations toward training trillion parameter models. [arXiv:1910.02054](https://arxiv.org/abs/1910.02054) and [In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC '20)](https://dl.acm.org/doi/10.5555/3433701.3433727).
-2. Jeff Rasley, Samyam Rajbhandari, Olatunji Ruwase, and Yuxiong He. (2020) DeepSpeed: System Optimizations Enable Training Deep Learning Models with Over 100 Billion Parameters. [In Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (KDD '20, Tutorial)](https://dl.acm.org/doi/10.1145/3394486.3406703).
-3. Minjia Zhang, Yuxiong He. (2020) Accelerating Training of Transformer-Based Language Models with Progressive Layer Dropping. [arXiv:2010.13369](https://arxiv.org/abs/2010.13369) and [NeurIPS 2020](https://proceedings.neurips.cc/paper/2020/hash/a1140a3d0df1c81e24ae954d935e8926-Abstract.html).
-4. Jie Ren, Samyam Rajbhandari, Reza Yazdani Aminabadi, Olatunji Ruwase, Shuangyan Yang, Minjia Zhang, Dong Li, Yuxiong He. (2021) ZeRO-Offload: Democratizing Billion-Scale Model Training. [arXiv:2101.06840](https://arxiv.org/abs/2101.06840) and [USENIX ATC 2021](https://www.usenix.org/conference/atc21/presentation/ren-jie). [[paper]](https://arxiv.org/abs/2101.06840) [[slides]](https://www.usenix.org/system/files/atc21_slides_ren-jie.pdf) [[blog]](https://www.microsoft.com/en-us/research/blog/deepspeed-extreme-scale-model-training-for-everyone/)
-5. Hanlin Tang, Shaoduo Gan, Ammar Ahmad Awan, Samyam Rajbhandari, Conglong Li, Xiangru Lian, Ji Liu, Ce Zhang, Yuxiong He. (2021) 1-bit Adam: Communication Efficient Large-Scale Training with Adam's Convergence Speed. [arXiv:2102.02888](https://arxiv.org/abs/2102.02888) and [ICML 2021](http://proceedings.mlr.press/v139/tang21a.html).
-6. Samyam Rajbhandari, Olatunji Ruwase, Jeff Rasley, Shaden Smith, Yuxiong He. (2021) ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning. [arXiv:2104.07857](https://arxiv.org/abs/2104.07857) and [SC 2021](https://dl.acm.org/doi/abs/10.1145/3458817.3476205). [[paper]](https://arxiv.org/abs/2104.07857) [[slides]](docs/assets/files/SC21-ZeRO-Infinity.pdf) [[blog]](https://www.microsoft.com/en-us/research/blog/zero-infinity-and-deepspeed-unlocking-unprecedented-model-scale-for-deep-learning-training/)
-7. Conglong Li, Ammar Ahmad Awan, Hanlin Tang, Samyam Rajbhandari, Yuxiong He. (2021) 1-bit LAMB: Communication Efficient Large-Scale Large-Batch Training with LAMB's Convergence Speed. [arXiv:2104.06069](https://arxiv.org/abs/2104.06069) and [HiPC 2022](https://hipc.org/advance-program/).
-8. Conglong Li, Minjia Zhang, Yuxiong He. (2021) The Stability-Efficiency Dilemma: Investigating Sequence Length Warmup for Training GPT Models. [arXiv:2108.06084](https://arxiv.org/abs/2108.06084) and [NeurIPS 2022](https://openreview.net/forum?id=JpZ5du_Kdh).
-9. Yucheng Lu, Conglong Li, Minjia Zhang, Christopher De Sa, Yuxiong He. (2022) Maximizing Communication Efficiency for Large-scale Training via 0/1 Adam. [arXiv:2202.06009](https://arxiv.org/abs/2202.06009).
-10. Samyam Rajbhandari, Conglong Li, Zhewei Yao, Minjia Zhang, Reza Yazdani Aminabadi, Ammar Ahmad Awan, Jeff Rasley, Yuxiong He. (2022) DeepSpeed-MoE: Advancing Mixture-of-Experts Inference and Training to Power Next-Generation AI Scale [arXiv:2201.05596](https://arxiv.org/abs/2201.05596) and [ICML 2022](https://proceedings.mlr.press/v162/rajbhandari22a.html). [[pdf]](https://arxiv.org/abs/2201.05596) [[slides]](docs/assets/files/ICML-5mins.pdf) [[blog]](https://www.microsoft.com/en-us/research/blog/deepspeed-advancing-moe-inference-and-training-to-power-next-generation-ai-scale/)
-11. Shaden Smith, Mostofa Patwary, Brandon Norick, Patrick LeGresley, Samyam Rajbhandari, Jared Casper, Zhun Liu, Shrimai Prabhumoye, George Zerveas, Vijay Korthikanti, Elton Zhang, Rewon Child, Reza Yazdani Aminabadi, Julie Bernauer, Xia Song, Mohammad Shoeybi, Yuxiong He, Michael Houston, Saurabh Tiwary, Bryan Catanzaro. (2022) Using DeepSpeed and Megatron to Train Megatron-Turing NLG 530B, A Large-Scale Generative Language Model [arXiv:2201.11990](https://arxiv.org/abs/2201.11990).
-12. Xiaoxia Wu, Zhewei Yao, Minjia Zhang, Conglong Li, Yuxiong He. (2022) Extreme Compression for Pre-trained Transformers Made Simple and Efficient. [arXiv:2206.01859](https://arxiv.org/abs/2206.01859) and [NeurIPS 2022](https://openreview.net/forum?id=xNeAhc2CNAl).
-13. Zhewei Yao, Reza Yazdani Aminabadi, Minjia Zhang, Xiaoxia Wu, Conglong Li, Yuxiong He. (2022) ZeroQuant: Efficient and Affordable Post-Training Quantization for Large-Scale Transformers. [arXiv:2206.01861](https://arxiv.org/abs/2206.01861) and [NeurIPS 2022](https://openreview.net/forum?id=f-fVCElZ-G1) [[slides]](docs/assets/files/zeroquant_series.pdf) [[blog]](https://www.microsoft.com/en-us/research/blog/deepspeed-compression-a-composable-library-for-extreme-compression-and-zero-cost-quantization/)
-14. Reza Yazdani Aminabadi, Samyam Rajbhandari, Minjia Zhang, Ammar Ahmad Awan, Cheng Li, Du Li, Elton Zheng, Jeff Rasley, Shaden Smith, Olatunji Ruwase, Yuxiong He. (2022) DeepSpeed Inference: Enabling Efficient Inference of Transformer Models at Unprecedented Scale. [arXiv:2207.00032](https://arxiv.org/abs/2207.00032) and [SC 2022](https://dl.acm.org/doi/abs/10.5555/3571885.3571946). [[paper]](https://arxiv.org/abs/2207.00032) [[slides]](docs/assets/files/sc22-ds-inference.pdf) [[blog]](https://www.microsoft.com/en-us/research/blog/deepspeed-accelerating-large-scale-model-inference-and-training-via-system-optimizations-and-compression/)
-15. Zhewei Yao, Xiaoxia Wu, Conglong Li, Connor Holmes, Minjia Zhang, Cheng Li, Yuxiong He. (2022) Random-LTD: Random and Layerwise Token Dropping Brings Efficient Training for Large-scale Transformers. [arXiv:2211.11586](https://arxiv.org/abs/2211.11586).
-16. Conglong Li, Zhewei Yao, Xiaoxia Wu, Minjia Zhang, Yuxiong He. (2022) DeepSpeed Data Efficiency: Improving Deep Learning Model Quality and Training Efficiency via Efficient Data Sampling and Routing. [arXiv:2212.03597](https://arxiv.org/abs/2212.03597) [ENLSP2023 Workshop at NeurIPS2023](https://neurips2023-enlsp.github.io/)
-17. Xiaoxia Wu, Cheng Li, Reza Yazdani Aminabadi, Zhewei Yao, Yuxiong He. (2023) Understanding INT4 Quantization for Transformer Models: Latency Speedup, Composability, and Failure Cases. [arXiv:2301.12017](https://arxiv.org/abs/2301.12017) and [ICML2023](https://icml.cc/Conferences/2023).
-18. Syed Zawad, Cheng Li, Zhewei Yao, Elton Zheng, Yuxiong He, Feng Yan. (2023) DySR: Adaptive Super-Resolution via Algorithm and System Co-design. [ICLR:2023](https://openreview.net/forum?id=Pgtn4l6eKjv).
-19. Sheng Shen, Zhewei Yao, Chunyuan Li, Trevor Darrell, Kurt Keutzer, Yuxiong He. (2023) Scaling Vision-Language Models with Sparse Mixture of Experts. [arXiv:2303.07226](https://arxiv.org/abs/2303.07226) and [Finding at EMNLP2023](https://2023.emnlp.org/).
-20. Quentin Anthony, Ammar Ahmad Awan, Jeff Rasley, Yuxiong He, Aamir Shafi, Mustafa Abduljabbar, Hari Subramoni, Dhabaleswar Panda. (2023) MCR-DL: Mix-and-Match Communication Runtime for Deep Learning [arXiv:2303.08374](https://arxiv.org/abs/2303.08374) and will appear at IPDPS 2023.
-21. Siddharth Singh, Olatunji Ruwase, Ammar Ahmad Awan, Samyam Rajbhandari, Yuxiong He, Abhinav Bhatele. (2023) A Hybrid Tensor-Expert-Data Parallelism Approach to Optimize Mixture-of-Experts Training [arXiv:2303.06318](https://arxiv.org/abs/2303.06318) and will appear at ICS 2023.
-22. Guanhua Wang, Heyang Qin, Sam Ade Jacobs, Xiaoxia Wu, Connor Holmes, Zhewei Yao, Samyam Rajbhandari, Olatunji Ruwase, Feng Yan, Lei Yang, Yuxiong He. (2023) ZeRO++: Extremely Efficient Collective Communication for Giant Model Training [arXiv:2306.10209](https://arxiv.org/abs/2306.10209) and [ML for Sys Workshop at NeurIPS2023](http://mlforsystems.org/) [[blog]](https://www.microsoft.com/en-us/research/blog/deepspeed-zero-a-leap-in-speed-for-llm-and-chat-model-training-with-4x-less-communication/)
-23. Zhewei Yao, Xiaoxia Wu, Cheng Li, Stephen Youn, Yuxiong He. (2023) ZeroQuant-V2: Exploring Post-training Quantization in LLMs from Comprehensive Study to Low Rank Compensation [arXiv:2303.08302](https://arxiv.org/abs/2303.08302) and [ENLSP2023 Workshop at NeurIPS2023](https://neurips2023-enlsp.github.io/) [[slides]](docs/assets/files/zeroquant_series.pdf)
-24. Pareesa Ameneh Golnari, Zhewei Yao, Yuxiong He. (2023) Selective Guidance: Are All the Denoising Steps of Guided Diffusion Important? [arXiv:2305.09847](https://arxiv.org/abs/2305.09847)
-25. Zhewei Yao, Reza Yazdani Aminabadi, Olatunji Ruwase, Samyam Rajbhandari, Xiaoxia Wu, Ammar Ahmad Awan, Jeff Rasley, Minjia Zhang, Conglong Li, Connor Holmes, Zhongzhu Zhou, Michael Wyatt, Molly Smith, Lev Kurilenko, Heyang Qin, Masahiro Tanaka, Shuai Che, Shuaiwen Leon Song, Yuxiong He. (2023) DeepSpeed-Chat: Easy, Fast and Affordable RLHF Training of ChatGPT-like Models at All Scales [arXiv:2308.01320](https://arxiv.org/abs/2308.01320).
-26. Xiaoxia Wu, Zhewei Yao, Yuxiong He. (2023) ZeroQuant-FP: A Leap Forward in LLMs Post-Training W4A8 Quantization Using Floating-Point Formats [arXiv:2307.09782](https://arxiv.org/abs/2307.09782) and [ENLSP2023 Workshop at NeurIPS2023](https://neurips2023-enlsp.github.io/) [[slides]](docs/assets/files/zeroquant_series.pdf)
-27. Zhewei Yao, Xiaoxia Wu, Conglong Li, Minjia Zhang, Heyang Qin, Olatunji Ruwase, Ammar Ahmad Awan, Samyam Rajbhandari, Yuxiong He. (2023) DeepSpeed-VisualChat: Multi-Round Multi-Image Interleave Chat via Multi-Modal Causal Attention [arXiv:2309.14327](https://arxiv.org/pdf/2309.14327.pdf)
-28. Shuaiwen Leon Song, Bonnie Kruft, Minjia Zhang, Conglong Li, Shiyang Chen, Chengming Zhang, Masahiro Tanaka, Xiaoxia Wu, Jeff Rasley, Ammar Ahmad Awan, Connor Holmes, Martin Cai, Adam Ghanem, Zhongzhu Zhou, Yuxiong He, et al. (2023) DeepSpeed4Science Initiative: Enabling Large-Scale Scientific Discovery through Sophisticated AI System Technologies [arXiv:2310.04610](https://arxiv.org/abs/2310.04610) [[blog]](https://www.microsoft.com/en-us/research/blog/announcing-the-deepspeed4science-initiative-enabling-large-scale-scientific-discovery-through-sophisticated-ai-system-technologies/)
-29. Zhewei Yao, Reza Yazdani Aminabadi, Stephen Youn, Xiaoxia Wu, Elton Zheng, Yuxiong He. (2023) ZeroQuant-HERO: Hardware-Enhanced Robust Optimized Post-Training Quantization Framework for W8A8 Transformers [arXiv:2310.17723](https://arxiv.org/abs/2310.17723)
-
-30. Xiaoxia Wu, Haojun Xia, Stephen Youn, Zhen Zheng, Shiyang Chen, Arash Bakhtiari, Michael Wyatt, Reza Yazdani Aminabadi, Yuxiong He, Olatunji Ruwase, Leon Song, Zhewei Yao (2023) ZeroQuant(4+2): Redefining LLMs Quantization with a New FP6-Centric Strategy for Diverse Generative Tasks [arXiv:2312.08583](https://arxiv.org/abs/2312.08583)
-
-31. Haojun Xia, Zhen Zheng, Xiaoxia Wu, Shiyang Chen, Zhewei Yao, Stephen Youn, Arash Bakhtiari, Michael Wyatt, Donglin Zhuang, Zhongzhu Zhou, Olatunji Ruwase, Yuxiong He, Shuaiwen Leon Song. (2024) FP6-LLM: Efficiently Serving Large Language Models Through FP6-Centric Algorithm-System Co-Design  [arXiv:2401.14112](https://arxiv.org/abs/2401.14112)
-
-
-
-# Videos
-1. DeepSpeed KDD 2020 Tutorial
-    1. [Overview](https://www.youtube.com/watch?v=CaseqC45DNc&list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&index=29)
-    2. [ZeRO + large model training](https://www.youtube.com/watch?v=y4_bCiAsIAk&list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&index=28)
-    3. [17B T-NLG demo](https://www.youtube.com/watch?v=9V-ZbP92drg&list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&index=27)
-    4. [Fastest BERT training + RScan tuning](https://www.youtube.com/watch?v=o1K-ZG9F6u0&list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&index=26)
-    5. DeepSpeed hands on deep dive: [part 1](https://www.youtube.com/watch?v=_NOk-mBwDYg&list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&index=92), [part 2](https://www.youtube.com/watch?v=sG6_c4VXLww&list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&index=94), [part 3](https://www.youtube.com/watch?v=k9yPkBTayos&list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&index=93)
-    6. [FAQ](https://www.youtube.com/watch?v=nsHu6vEgPew&list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&index=24)
-2. Microsoft Research Webinar
-    * Registration is free and all videos are available on-demand.
-    * [ZeRO & Fastest BERT: Increasing the scale and speed of deep learning training in DeepSpeed](https://note.microsoft.com/MSR-Webinar-DeepSpeed-Registration-On-Demand.html).
-3. [DeepSpeed on AzureML](https://youtu.be/yBVXR8G8Bg8)
-4. [Large Model Training and Inference with DeepSpeed // Samyam Rajbhandari // LLMs in Prod Conference](https://www.youtube.com/watch?v=cntxC3g22oU) [[slides]](docs/assets/files/presentation-mlops.pdf)
-5. Community Tutorials
-    * [DeepSpeed: All the tricks to scale to gigantic models (Mark Saroufim)](https://www.youtube.com/watch?v=pDGI668pNg0)
-    * [Turing-NLG, DeepSpeed and the ZeRO optimizer (Yannic Kilcher)](https://www.youtube.com/watch?v=tC01FRB0M7w)
-    * [Ultimate Guide To Scaling ML Models (The AI Epiphany)](https://www.youtube.com/watch?v=hc0u4avAkuM)
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献者许可协议</font></font></h2><a id="user-content-contributor-license-agreement" class="anchor" aria-label="永久链接：贡献者许可协议" href="#contributor-license-agreement"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目欢迎贡献和建议。大多数贡献都要求您同意贡献者许可协议 (CLA)，声明您有权并且实际上授予我们使用您的贡献的权利。有关详细信息，请访问
+</font></font><a href="https://cla.opensource.microsoft.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://cla.opensource.microsoft.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">当您提交拉取请求时，CLA 机器人将自动确定您是否需要提供 CLA 并适当地修饰 PR（例如，状态检查、评论）。只需按照机器人提供的说明进行操作即可。您只需使用我们的 CLA 在所有存储库中执行一次此操作。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行为守则</font></font></h2><a id="user-content-code-of-conduct" class="anchor" aria-label="永久链接：行为准则" href="#code-of-conduct"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目采用了</font></font><a href="https://opensource.microsoft.com/codeofconduct/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">微软开源行为准则</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。有关详细信息，请参阅
+</font></font><a href="https://opensource.microsoft.com/codeofconduct/faq/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行为准则常见问题解答</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或联系
+</font></font><a href="mailto:opencode@microsoft.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">opencode@microsoft.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提出任何其他问题或意见。</font></font></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">刊物</font></font></h1><a id="user-content-publications" class="anchor" aria-label="永久链接：出版物" href="#publications"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Samyam Rajbhandari、Jeff Rasley、Olatunji Ruwase、何宇雄。 (2019) ZeRO：训练万亿参数模型的内存优化。</font></font><a href="https://arxiv.org/abs/1910.02054" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:1910.02054</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://dl.acm.org/doi/10.5555/3433701.3433727" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">高性能计算、网络、存储和分析国际会议 (SC '20) 的会议记录</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jeff Rasley、Samyam Rajbhandari、Olatunji Ruwase 和 Yuxiong He。 (2020) DeepSpeed：系统优化支持使用超过 1000 亿个参数训练深度学习模型。</font></font><a href="https://dl.acm.org/doi/10.1145/3394486.3406703" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">第 26 届 ACM SIGKDD 国际知识发现和数据挖掘会议（KDD '20，教程）的会议记录</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">张敏嘉, 何宇雄. (2020) 通过渐进层丢弃加速基于 Transformer 的语言模型的训练。</font></font><a href="https://arxiv.org/abs/2010.13369" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2010.13369</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://proceedings.neurips.cc/paper/2020/hash/a1140a3d0df1c81e24ae954d935e8926-Abstract.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NeurIPS 2020</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">任杰，Samyam Rajbhandari，Reza Yazdani Aminabadi，Olatunji Ruwase，杨双艳，张敏嘉，李东，何宇雄。 (2021) ZeRO-Offload：数十亿规模的模型训练民主化。</font></font><a href="https://arxiv.org/abs/2101.06840" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2101.06840</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://www.usenix.org/conference/atc21/presentation/ren-jie" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">USENIX ATC 2021</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font><a href="https://arxiv.org/abs/2101.06840" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[论文] </font></font></a> <a href="https://www.usenix.org/system/files/atc21_slides_ren-jie.pdf" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[幻灯片] </font></font></a> <a href="https://www.microsoft.com/en-us/research/blog/deepspeed-extreme-scale-model-training-for-everyone/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[博客]</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">唐汉林，甘少多，Ammar Ahmad Awan，Samyam Rajbhandari，李从龙，连相如，刘吉，张策，何宇雄。 (2021) 1 位 Adam：具有 Adam 收敛速度的高效通信大规模训练。</font></font><a href="https://arxiv.org/abs/2102.02888" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2102.02888</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="http://proceedings.mlr.press/v139/tang21a.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ICML 2021</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Samyam Rajbhandari、Olatunji Ruwase、Jeff Rasley、Shaden Smith、何宇雄。 (2021) ZeRO-Infinity：打破超大规模深度学习的 GPU 内存墙。</font></font><a href="https://arxiv.org/abs/2104.07857" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2104.07857</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://dl.acm.org/doi/abs/10.1145/3458817.3476205" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SC 2021</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font><a href="https://arxiv.org/abs/2104.07857" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[论文] </font></font></a> <a href="/microsoft/DeepSpeed/blob/master/docs/assets/files/SC21-ZeRO-Infinity.pdf"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[幻灯片] </font></font></a> <a href="https://www.microsoft.com/en-us/research/blog/zero-infinity-and-deepspeed-unlocking-unprecedented-model-scale-for-deep-learning-training/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[博客]</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">李从龙、Ammar Ahmad Awan、Hanlin Tang、Samyam Rajbhandari、Yyuxiong He。 (2021) 1 位 LAMB：利用 LAMB 的收敛速度进行通信高效的大规模大批量训练。</font></font><a href="https://arxiv.org/abs/2104.06069" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2104.06069</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://hipc.org/advance-program/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HiPC 2022</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">李从龙, 张敏佳, 何宇雄. (2021) 稳定性-效率困境：研究训练 GPT 模型的序列长度预热。</font></font><a href="https://arxiv.org/abs/2108.06084" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2108.06084</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://openreview.net/forum?id=JpZ5du_Kdh" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NeurIPS 2022</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">卢玉成，李从龙，张敏佳，克里斯托弗·德·萨，何宇雄。 (2022) 通过 0/1 Adam 最大限度地提高大规模培训的通信效率。</font></font><a href="https://arxiv.org/abs/2202.06009" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv：2202.06009</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Samyam Rajbhandari、李从龙、姚哲伟、张敏佳、Reza Yazdani Aminabadi、Ammar Ahmad Awan、Jeff Rasley、何宇雄。 (2022) DeepSpeed-MoE：推进专家混合推理和训练，为下一代 AI 规模提供动力</font></font><a href="https://arxiv.org/abs/2201.05596" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2201.05596</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://proceedings.mlr.press/v162/rajbhandari22a.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ICML 2022</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font><a href="https://arxiv.org/abs/2201.05596" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[pdf] </font></font></a> <a href="/microsoft/DeepSpeed/blob/master/docs/assets/files/ICML-5mins.pdf"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[幻灯片] </font></font></a> <a href="https://www.microsoft.com/en-us/research/blog/deepspeed-advancing-moe-inference-and-training-to-power-next-generation-ai-scale/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[博客]</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">沙登·史密斯、莫斯托法·帕特瓦里、布兰登·诺里克、帕特里克·勒格雷斯利、萨姆亚姆·拉杰班达里、贾里德·卡斯帕、刘准、什里迈·帕布胡莫耶、乔治·泽维斯、维杰·科蒂坎蒂、埃尔顿·张、Rewon Child、雷扎·亚兹达尼·阿米纳巴迪、朱莉·伯瑙尔、夏松、穆罕默德·舒伊比、宇雄他，迈克尔·休斯顿，索拉布·蒂瓦里，布莱恩·卡坦扎罗。 (2022) 使用 DeepSpeed 和 Megatron 训练 Megatron-Turing NLG 530B，一种大规模生成语言模型</font></font><a href="https://arxiv.org/abs/2201.11990" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2201.11990</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">吴晓霞，姚哲伟，张敏佳，李从龙，何宇雄。 (2022) 预训练 Transformer 的极限压缩变得简单高效。</font></font><a href="https://arxiv.org/abs/2206.01859" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2206.01859</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://openreview.net/forum?id=xNeAhc2CNAl" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NeurIPS 2022</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">姚哲伟、Reza Yazdani Aminabadi、张敏佳、吴晓霞、李从龙、何宇雄。 (2022) ZeroQuant：针对大型 Transformer 的高效且经济实惠的训练后量化。</font></font><a href="https://arxiv.org/abs/2206.01861" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2206.01861</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://openreview.net/forum?id=f-fVCElZ-G1" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NeurIPS 2022 </font></font></a> <a href="/microsoft/DeepSpeed/blob/master/docs/assets/files/zeroquant_series.pdf"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[幻灯片] </font></font></a> <a href="https://www.microsoft.com/en-us/research/blog/deepspeed-compression-a-composable-library-for-extreme-compression-and-zero-cost-quantization/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[博客]</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Reza Yazdani Aminabadi、Samyam Rajbhandari、张敏嘉、Ammar Ahmad Awan、程力、杜力、Elton Cheng、Jeff Rasley、Shaden Smith、Olatunji Ruwase、何宇雄。 (2022) DeepSpeed Inference：以前所未有的规模实现 Transformer 模型的高效推理。</font></font><a href="https://arxiv.org/abs/2207.00032" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2207.00032</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://dl.acm.org/doi/abs/10.5555/3571885.3571946" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SC 2022</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font><a href="https://arxiv.org/abs/2207.00032" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[论文] </font></font></a> <a href="/microsoft/DeepSpeed/blob/master/docs/assets/files/sc22-ds-inference.pdf"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[幻灯片] </font></font></a> <a href="https://www.microsoft.com/en-us/research/blog/deepspeed-accelerating-large-scale-model-inference-and-training-via-system-optimizations-and-compression/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[博客]</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">姚哲伟、吴晓霞、李从龙、Connor Holmes、张敏嘉、李成、何宇雄。 (2022) Random-LTD：随机分层令牌丢弃为大规模 Transformer 带来高效训练。</font></font><a href="https://arxiv.org/abs/2211.11586" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv：2211.11586</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">李从龙，姚哲伟，吴晓霞，张敏佳，何宇雄。 (2022) DeepSpeed 数据效率：通过高效数据采样和路由提高深度学习模型质量和训练效率。</font></font><a href="https://arxiv.org/abs/2212.03597" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2212.03597 </font></font></a> <a href="https://neurips2023-enlsp.github.io/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NeurIPS2023 的 ENLSP2023 研讨会</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">吴晓霞，李程，Reza Yazdani Aminabadi，姚哲伟，何宇雄。 (2023) 了解 Transformer 模型的 INT4 量化：延迟加速、可组合性和故障案例。</font></font><a href="https://arxiv.org/abs/2301.12017" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2301.12017</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://icml.cc/Conferences/2023" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ICML2023</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">赛义德·扎瓦德、李成、姚哲伟、郑埃尔顿、何宇雄、严锋。 (2023) DySR：通过算法和系统协同设计实现自适应超分辨率。</font></font><a href="https://openreview.net/forum?id=Pgtn4l6eKjv" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ICLR：2023</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">申盛、姚哲伟、李春元、Trevor Darrell、Kurt Keutzer、何宇雄。 (2023) 用稀疏的专家组合扩展视觉语言模型。</font></font><a href="https://arxiv.org/abs/2303.07226" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2303.07226</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并</font></font><a href="https://2023.emnlp.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 EMNLP2023 上找到</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">昆汀·安东尼、阿马尔·艾哈迈德·阿万、杰夫·拉斯利、何宇雄、阿米尔·沙菲、穆斯塔法·阿卜杜勒贾巴尔、哈里·苏布拉莫尼、达巴莱斯瓦尔·潘达。 (2023) MCR-DL：深度学习的混合匹配通信运行时</font></font><a href="https://arxiv.org/abs/2303.08374" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2303.08374</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并将出现在 IPDPS 2023 上。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Siddharth Singh、Olatunji Ruwase、Ammar Ahmad Awan、Samyam Rajbhandari、Yyuxiong He、Abhinav Bhatele。 (2023) 用于优化专家混合训练的混合张量-专家-数据并行方法</font></font><a href="https://arxiv.org/abs/2303.06318" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2303.06318</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并将出现在 ICS 2023 上。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">王冠华、秦鹤阳、Sam Ade Jacobs、吴晓霞、Connor Holmes、Zhewei Yao、Samyam Rajbhandari、Olatunji Ruwase、Feng Yan、Lei Yang、Yyuxiong He。 (2023) ZeRO++：巨型模型训练的极其高效的集体通信</font></font><a href="https://arxiv.org/abs/2306.10209" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2306.10209</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="http://mlforsystems.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NeurIPS2023 的 Sys 研讨会的 ML </font></font></a> <a href="https://www.microsoft.com/en-us/research/blog/deepspeed-zero-a-leap-in-speed-for-llm-and-chat-model-training-with-4x-less-communication/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[博客]</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">姚哲伟、吴晓霞、李程、Stephen Youn、何宇雄。 (2023) ZeroQuant-V2：从综合研究到低阶补偿探索法学硕士的训练后量化</font></font><a href="https://arxiv.org/abs/2303.08302" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2303.08302</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://neurips2023-enlsp.github.io/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NeurIPS2023 的 ENLSP2023 研讨会</font></font></a> <a href="/microsoft/DeepSpeed/blob/master/docs/assets/files/zeroquant_series.pdf"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[幻灯片]</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">帕雷萨·阿梅内·戈尔纳里 (Pareesa Ameneh Golnari)，姚哲伟，何宇雄。 (2023) 选择性引导：引导扩散的所有去噪步骤都很重要吗？</font></font><a href="https://arxiv.org/abs/2305.09847" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv：2305.09847</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">姚哲伟、Reza Yazdani Aminabadi、Olatunji Ruwase、Samyam Rajbhandari、吴晓霞、Ammar Ahmad Awan、Jeff Rasley、张敏嘉、李从龙、Connor Holmes、周中柱、Michael Wyatt、Molly Smith、Lev Kurilenko、Heyang Qing、Masahiro Tanaka、车帅、宋帅文、何宇雄。 (2023) DeepSpeed-Chat：简单、快速且经济实惠的所有规模的类似 ChatGPT 模型的 RLHF 训练</font></font><a href="https://arxiv.org/abs/2308.01320" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2308.01320</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">吴晓霞，姚哲伟，何宇雄。 (2023) ZeroQuant-FP：使用浮点格式进行 LLM 训练后 W4A8 量化的飞跃</font></font><a href="https://arxiv.org/abs/2307.09782" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2307.09782</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://neurips2023-enlsp.github.io/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NeurIPS2023 的 ENLSP2023 研讨会</font></font></a> <a href="/microsoft/DeepSpeed/blob/master/docs/assets/files/zeroquant_series.pdf"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[幻灯片]</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">姚哲伟、吴晓霞、李从龙、张敏佳、秦河阳、Olatunji Ruwase、Ammar Ahmad Awan、Samyam Rajbhandari、何宇雄。 (2023) DeepSpeed-VisualChat：通过多模态因果注意进行多轮多图像交错聊天</font></font><a href="https://arxiv.org/pdf/2309.14327.pdf" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2309.14327</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">帅文 Leon Song、Bonnie Kruft、Minjia 张、李从龙、陈世阳、张成明、Masahiro Tanaka、吴晓霞、Jeff Rasley、Ammar Ahmad Awan、Connor Holmes、Martin Cai、Adam Ghanem、Zhongzhu Zhou、Yyuxiong He 等。 (2023) DeepSpeed4Science Initiative：通过复杂的人工智能系统技术实现大规模科学发现</font></font><a href="https://arxiv.org/abs/2310.04610" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2310.04610 </font></font></a> <a href="https://www.microsoft.com/en-us/research/blog/announcing-the-deepspeed4science-initiative-enabling-large-scale-scientific-discovery-through-sophisticated-ai-system-technologies/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[博客]</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">姚哲伟、Reza Yazdani Aminabadi、Stephen Youn、吴晓霞、Elton Cheng、何宇雄。 (2023) ZeroQuant-HERO：W8A8 Transformers 的硬件增强型鲁棒优化后训练量化框架</font></font><a href="https://arxiv.org/abs/2310.17723" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2310.17723</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">吴晓霞、夏浩军、Stephen Youn、Zhen Cheng、Shiyang Chen、Arash Bakhtiari、Michael Wyatt、Reza Yazdani Aminabadi、Yyuxiong He、Olatunji Ruwase、Leon Song、Zhewei Yao (2023) ZeroQuant(4+2)：重新定义法学硕士量化一种新的以 FP6 为中心的多样化生成任务策略</font></font><a href="https://arxiv.org/abs/2312.08583" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2312.08583</font></font></a></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">夏浩军、郑振、吴晓霞、陈世阳、姚哲伟、Stephen Youn、Arash Bakhtiari、Michael Wyatt、Donglin Zhuang、Zhongzhu Zhou、Olatunji Ruwase、Yyuxiong He、Shuaiwen Leon Song。 (2024) FP6-LLM：通过以 FP6 为中心的算法系统协同设计高效服务大型语言模型  </font></font><a href="https://arxiv.org/abs/2401.14112" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arXiv:2401.14112</font></font></a></p>
+</li>
+</ol>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">视频</font></font></h1><a id="user-content-videos" class="anchor" aria-label="永久链接：视频" href="#videos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed KDD 2020 教程
+</font></font><ol dir="auto">
+<li><a href="https://www.youtube.com/watch?v=CaseqC45DNc&amp;list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&amp;index=29" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">概述</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=y4_bCiAsIAk&amp;list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&amp;index=28" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ZeRO+大模型训练</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=9V-ZbP92drg&amp;list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&amp;index=27" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">17B T-NLG 演示</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=o1K-ZG9F6u0&amp;list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&amp;index=26" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最快的 BERT 训练 + RScan 调优</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 深入探究：</font></font><a href="https://www.youtube.com/watch?v=_NOk-mBwDYg&amp;list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&amp;index=92" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">第 1 部分</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://www.youtube.com/watch?v=sG6_c4VXLww&amp;list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&amp;index=94" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">第 2 部分</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://www.youtube.com/watch?v=k9yPkBTayos&amp;list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&amp;index=93" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">第 3 部分</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=nsHu6vEgPew&amp;list=PLa85ZdUjfWS21mgibJ2vCvLziprjpKoW0&amp;index=24" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">常问问题</font></font></a></li>
+</ol>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">微软研究院网络研讨会
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">注册是免费的，所有视频都可以点播。</font></font></li>
+<li><a href="https://note.microsoft.com/MSR-Webinar-DeepSpeed-Registration-On-Demand.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ZeRO 和 Fastest BERT：提高 DeepSpeed 中深度学习训练的规模和速度</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+</ul>
+</li>
+<li><a href="https://youtu.be/yBVXR8G8Bg8" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AzureML 上的 DeepSpeed</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=cntxC3g22oU" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 DeepSpeed 进行大型模型训练和推理 // Samyam Rajbhandari // Prod 会议中的法学硕士</font></font></a> <a href="/microsoft/DeepSpeed/blob/master/docs/assets/files/presentation-mlops.pdf"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[幻灯片]</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">社区教程
+</font></font><ul dir="auto">
+<li><a href="https://www.youtube.com/watch?v=pDGI668pNg0" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed：扩展到巨型模型的所有技巧（Mark Saroufim）</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=tC01FRB0M7w" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Turing-NLG、DeepSpeed 和 ZeRO 优化器 (Yannic Kilcher)</font></font></a></li>
+<li><a href="https://www.youtube.com/watch?v=hc0u4avAkuM" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">扩展 ML 模型的终极指南（AI 顿悟）</font></font></a></li>
+</ul>
+</li>
+</ol>
+</article></div>
